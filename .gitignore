@@ -1,0 +1,7 @@
+*.swo
+*.swp
+.DS_Store
+.venv
+.mypy_cache
+*/__pycache__
+*.bkp

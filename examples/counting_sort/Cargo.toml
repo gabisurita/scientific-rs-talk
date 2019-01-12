@@ -1,0 +1,27 @@
+[package]
+name = "counting-sort-py"
+version = "0.1.0"
+authors = ["Gabriela Surita <gabsurita@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "counting_sort"
+crate-type = ["cdylib"]
+
+[dependencies]
+ndarray = "0.12"
+num-traits = "0.1"
+lapjv = {git = "https://github.com/gabisurita/lapjv-rust" }
+
+[dependencies.pyo3]
+version = "0.5"
+features = ["extension-module"]
+
+[dependencies.numpy]
+version = "0.4"
+
+[target.x86_64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
+]
